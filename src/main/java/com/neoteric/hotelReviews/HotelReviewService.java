@@ -22,7 +22,7 @@ public class HotelReviewService {
         for (Image location : hotelImageList) {
 
             if (location.getLocationId() == locationId &&
-                    location.getName() == name) {
+                    location.getName().equals(name)) {
                 imageArrayList.add(location);
             }
         }
@@ -31,7 +31,7 @@ public class HotelReviewService {
     public List<Review> getHotelReviewListByLocationAndName(int locationId, String name) {
         List<Review> reviewArrayList = new ArrayList<>();
         for (Review review : hotelReviewList) {
-            if (review.getLocationId() == locationId && review.getName() == name) {
+            if (review.getLocationId() == locationId && review.getName().equals(name)) {
                 reviewArrayList.add(review);
                 }
         }
